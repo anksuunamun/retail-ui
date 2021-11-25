@@ -1,4 +1,5 @@
-import { DefaultThemeInternal } from '../../../internal/themes/DefaultTheme';
 import { ThemeFactory } from '../ThemeFactory';
+import { NotFlatThemeInternal } from '../../../internal/themes/NotFlat';
+import { OldColorsThemeInternal } from '../../../internal/themes/OldColors';
 
-export const DEFAULT_THEME_OLD = ThemeFactory.create({}, DefaultThemeInternal);
+export const DEFAULT_THEME_OLD = ThemeFactory.create(NotFlatThemeInternal, OldColorsThemeInternal);

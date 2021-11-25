@@ -1320,7 +1320,7 @@ export class NewDefaultTheme {
   public static radioBorderColor = 'rgba(0, 0, 0, 0.16)';
   public static radioBoxShadow = 'none';
   public static get radioBorder() {
-    return `${this.radioBorderWidth} solid rgba(0, 0, 0, 0.16)`;
+    return `${this.radioBorderWidth} solid ${this.radioBorderColor}`;
   }
   public static get radioBorderColorFocus() {
     return this.borderColorFocus;
@@ -1527,7 +1527,7 @@ export class NewDefaultTheme {
   public static get switcherButtonDisabledBorderColor() {
     return this.borderColorDisabled;
   }
-  public static switcherButtonCheckedDisabledShadow: 'none';
+  public static switcherButtonCheckedDisabledShadow = 'none';
   //#endregion
   //#region ScrollContainer
   public static scrollContainerScrollBarSize = '4px';
