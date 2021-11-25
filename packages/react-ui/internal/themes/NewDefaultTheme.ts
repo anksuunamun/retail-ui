@@ -807,7 +807,9 @@ export class NewDefaultTheme {
     return this.textColorDefault;
   }
   public static pagingPageLinkHoverBg = 'rgba(0, 0, 0, 0.05)';
-  public static pagingPageLinkHintColor = 'rgba(0, 0, 0, 0.09)';
+  public static get pagingPageLinkHintColor() {
+    return this.placeholderColor;
+  }
   public static pagingPageLinkHintFontSize = '12px';
   public static pagingPageLinkHintLineHeight = '16px';
   public static pagingPageLinkBorderRadius = '50%';
