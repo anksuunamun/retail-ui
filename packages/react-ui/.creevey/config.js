@@ -68,16 +68,16 @@ const config = {
       name: 'infrafront/chromeFlat8px',
       ...capabilities,
     },
-    // chromeNewTheme: {
-    //   browserName: 'chrome',
-    //   viewport: { width: 1024, height: 720 },
-    //   platformName: 'linux',
-    //   _storybookGlobals: {
-    //     theme: 'NEW_THEME',
-    //   },
-    //   name: 'infrafront/chromeNewTheme',
-    //   ...capabilities,
-    // },
+    chromeNewTheme: {
+      browserName: 'chrome',
+      viewport: { width: 1024, height: 720 },
+      platformName: 'linux',
+      _storybookGlobals: {
+        theme: 'NEW_THEME',
+      },
+      name: 'infrafront/chromeNewTheme',
+      ...capabilities,
+    },
     // firefox: {
     //   browserName: 'firefox',
     //   viewport: { width: 1024, height: 720 },
@@ -114,15 +114,15 @@ const config = {
       name: 'infrafront/firefoxFlat8px',
       ...capabilities,
     },
-    // firefoxNewTheme: {
-    //   browserName: 'firefox',
-    //   viewport: { width: 1024, height: 720 },
-    //   _storybookGlobals: {
-    //     theme: 'NEW_THEME',
-    //   },
-    //   name: 'infrafront/firefoxNewTheme',
-    //   ...capabilities,
-    // },
+    firefoxNewTheme: {
+      browserName: 'firefox',
+      viewport: { width: 1024, height: 720 },
+      _storybookGlobals: {
+        theme: 'NEW_THEME',
+      },
+      name: 'infrafront/firefoxNewTheme',
+      ...capabilities,
+    },
     // ie11: {
     //   browserName: 'internet explorer',
     //   viewport: { width: 1024, height: 720 },
@@ -169,15 +169,15 @@ const config = {
       name: 'infrafront/ie11Flat8px',
       ...capabilities,
     },
-    // ie11NewTheme: {
-    //   browserName: 'internet explorer',
-    //   viewport: { width: 1024, height: 720 },
-    //   _storybookGlobals: {
-    //     theme: 'NEW_THEME',
-    //   },
-    //   name: 'infrafront/ie11NewTheme',
-    //   ...capabilities,
-    // },
+    ie11NewTheme: {
+      browserName: 'internet explorer',
+      viewport: { width: 1024, height: 720 },
+      _storybookGlobals: {
+        theme: 'NEW_THEME',
+      },
+      name: 'infrafront/ie11NewTheme',
+      ...capabilities,
+    },
   },
 };
 
