@@ -345,13 +345,13 @@ export class NewDefaultTheme {
     return this.btnSuccessActiveBorderColor;
   }
   public static btnSuccessActiveShadow = 'none';
-  public static btnPrimaryBg = '#1f87ef';
-  public static btnPrimaryHoverBg = '#1c7edf';
-  public static btnPrimaryHoverBorderColor = '#1c7edf';
+  public static btnPrimaryBg = '#1c7edf';
+  public static btnPrimaryHoverBg = '#1874cf';
+  public static btnPrimaryHoverBorderColor = '#1874cf';
   public static get btnPrimaryHoverBorderBottomColor() {
     return this.btnPrimaryHoverBorderColor;
   }
-  public static btnPrimaryBorderColor = '#1f87ef';
+  public static btnPrimaryBorderColor = '#1c7edf';
   public static get btnPrimaryBorderBottomColor() {
     return this.btnPrimaryBorderColor;
   }
@@ -360,8 +360,8 @@ export class NewDefaultTheme {
   public static btnPrimaryTextColor = '#fff';
   public static btnPrimaryHoverBgStart = 'none';
   public static btnPrimaryHoverBgEnd = 'none';
-  public static btnPrimaryActiveBg = '#1874cf';
-  public static btnPrimaryActiveBorderColor = '#1874cf';
+  public static btnPrimaryActiveBg = '#156abe';
+  public static btnPrimaryActiveBorderColor = '#156abe';
   public static get btnPrimaryActiveBorderTopColor() {
     return this.btnPrimaryActiveBorderColor;
   }
