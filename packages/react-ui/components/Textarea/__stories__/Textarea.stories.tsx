@@ -381,7 +381,7 @@ TextareaWithCounters.parameters = {
   creevey: {
     skip: [
       {
-        in: ['firefox', 'firefoxFlat', 'firefox8px', 'firefoxFlat8px', 'firefoxNewTheme'],
+        in: ['firefox'],
         reason: 'flacky scrollbars height',
       },
     ],
