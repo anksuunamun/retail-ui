@@ -34,7 +34,7 @@ const config = {
       viewport: { width: 1024, height: 720 },
       platformName: 'linux',
       _storybookGlobals: {
-        theme: 'NEW_THEME',
+        theme: 'DEFAULT_THEME',
       },
       name: 'infrafront/chrome',
       ...capabilities,
@@ -43,7 +43,7 @@ const config = {
       browserName: 'firefox',
       viewport: { width: 1024, height: 720 },
       _storybookGlobals: {
-        theme: 'NEW_THEME',
+        theme: 'DEFAULT_THEME',
       },
       name: 'infrafront/firefox',
       ...capabilities,
@@ -62,7 +62,7 @@ const config = {
       browserName: 'internet explorer',
       viewport: { width: 1024, height: 720 },
       _storybookGlobals: {
-        theme: 'NEW_THEME',
+        theme: 'DEFAULT_THEME',
       },
       name: 'infrafront/ie11',
       ...capabilities,
