@@ -1,5 +1,4 @@
 const path = require('path');
-const axios = require('axios');
 
 /**
  * Debuggin instructions: https://wiki.skbkontur.ru/pages/viewpage.action?pageId=418699157
@@ -20,7 +19,7 @@ const config = {
   reportDir: path.join(__dirname, 'report'),
   screenDir: path.join(__dirname, 'images'),
   gridUrl: 'https://frontinfra:frontinfra@grid.testkontur.ru/wd/hub',
-  resolveStorybookUrl: () => axios('https://fake.testkontur.ru/ip').then((res) => 'http://' + res.data + ':6060'),
+  storybookUrl: 'http://localhost:6060',
   // NOTE Should refactor Button styles without 1px-border
   maxRetries: process.env.TEAMCITY_VERSION ? 10 : 0,
   babelOptions: (options) => ({
