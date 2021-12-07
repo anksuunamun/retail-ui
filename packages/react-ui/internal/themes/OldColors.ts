@@ -6,6 +6,7 @@ export class OldColorsTheme extends (class {} as typeof DefaultThemeInternal) {
   //#region Common variables
   public static brand = '#1e79be';
   public static grayXLight = '#e5e5e5';
+  public static gray = '#808080';
   public static blueXxLight = '#e4f3ff';
   public static blueLight = '#1d85d0';
   public static blue = '#3072c4';
@@ -28,6 +29,8 @@ export class OldColorsTheme extends (class {} as typeof DefaultThemeInternal) {
   public static placeholderColor = '#a0a0a0';
   public static textColorDefault = '#333333';
   public static textColorDisabled = '#a0a0a0';
+  public static textColorDisabledContrast = '#808080';
+  public static bgDisabled = '#f2f2f2';
   //#endregion
   //#region Link
   public static linkColor = '#3072c4';

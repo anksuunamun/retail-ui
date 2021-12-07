@@ -13,7 +13,7 @@ export class DefaultTheme {
   public static grayXxLight = '#f2f2f2';
   public static grayXLight = '#ebebeb';
   public static grayLight = '#a0a0a0';
-  public static gray = '#808080';
+  public static gray = '#858585';
   public static grayDark = '#333';
   public static black = '#000';
   public static blueXxLight = '#cdedff';
@@ -31,7 +31,7 @@ export class DefaultTheme {
   public static yellow = '#ffa236';
   public static yellowDark = '#ea7324';
   public static bgDefault = '#fff';
-  public static bgDisabled = '#f2f2f2';
+  public static bgDisabled = '#f6f6f6';
   public static errorMain = '#dd473b';
   public static errorSecondary = '#ffd6d6';
   public static errorText = '#cb3d35';
@@ -57,7 +57,7 @@ export class DefaultTheme {
   public static textColorDefault = '#222222';
   public static textColorInvert = '#fff';
   public static textColorDisabled = '#adadad';
-  public static textColorDisabledContrast = '#808080';
+  public static textColorDisabledContrast = '#858585';
   public static fontSizeSmall = '14px';
   public static fontSizeMedium = '16px';
   public static fontSizeLarge = '18px';
@@ -705,7 +705,9 @@ export class DefaultTheme {
   }
   //#endregion
   //#region DateInput
-  public static dateInputIconColor = '#222';
+  public static get dateInputIconColor() {
+    return this.textColorDefault;
+  }
   public static dateInputMaskColor = '#b8b8b8';
   public static dateInputComponentSelectedBgColor = '#cae0f4';
   //#endregion
@@ -753,7 +755,9 @@ export class DefaultTheme {
   public static get dateSelectTextColorInvert() {
     return this.textColorInvert;
   }
-  public static datePickerOpenBtnColor = '#222';
+  public static get datePickerOpenBtnColor() {
+    return this.textColorDefault;
+  }
   public static pickerBg = '#fff';
   public static pickerShadow = '0 4px 12px 0 rgba(0, 0, 0, 0.16)';
   public static pickerTodayWrapperBgColor = 'white';
