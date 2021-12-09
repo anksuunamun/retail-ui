@@ -70,7 +70,7 @@ export class Theme8px extends (class {} as typeof DefaultThemeInternal) {
   public static get btnPaddingYLarge() {
     return this.controlPaddingYLarge;
   }
-  public static btnBorderRadiusSmall = '2px';
+  public static btnBorderRadiusSmall = '1px';
   public static btnBorderRadiusMedium = '2px';
   public static btnBorderRadiusLarge = '2px';
 

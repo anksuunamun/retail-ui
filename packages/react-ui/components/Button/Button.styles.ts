@@ -17,6 +17,7 @@ export const globalClasses = prefix('button')({
   arrowHelperTop: 'arrow-helper-top',
   arrowHelperBottom: 'arrow-helper-bottom',
   caption: 'caption',
+  shadow: 'shadow',
 });
 
 export const styles = memoizeStyle({
@@ -34,7 +35,6 @@ export const styles = memoizeStyle({
       position: relative;
       text-align: center;
       width: 100%;
-      border: ${t.btnBorderWidth} solid transparent;
 
       &::-moz-focus-inner {
         border: 0;
@@ -104,7 +104,6 @@ export const styles = memoizeStyle({
 
       ${buttonSizeMixin(
         t.btnFontSizeSmall,
-        t.btnHeightSmall,
         t.btnLineHeightSmall,
         t.btnPaddingXSmall,
         t.btnPaddingYSmall,
@@ -130,7 +129,6 @@ export const styles = memoizeStyle({
 
       ${buttonSizeMixin(
         t.btnFontSizeMedium,
-        t.btnHeightMedium,
         t.btnLineHeightMedium,
         t.btnPaddingXMedium,
         t.btnPaddingYMedium,
@@ -156,7 +154,6 @@ export const styles = memoizeStyle({
 
       ${buttonSizeMixin(
         t.btnFontSizeLarge,
-        t.btnHeightLarge,
         t.btnLineHeightLarge,
         t.btnPaddingXLarge,
         t.btnPaddingYLarge,
@@ -231,7 +228,6 @@ export const styles = memoizeStyle({
       &:active:hover {
         box-shadow: inset 0 0 0 ${t.btnInsetWidth} ${t.btnOutlineColorFocus},
           0 0 0 ${t.btnFocusShadowWidth} ${t.btnBorderColorFocus};
-        border-color: ${t.btnBorderColorFocus};
       }
     `;
   },
@@ -240,12 +236,11 @@ export const styles = memoizeStyle({
     return css`
       cursor: default;
       pointer-events: none;
-      border-color: ${t.btnDisabledBorderColor};
+      box-shadow: 0 0 0 ${t.btnBorderWidth} ${t.btnDisabledBorderColor};
 
       background-image: none;
       background-color: ${t.btnDisabledBg};
       color: ${t.btnDisabledTextColor};
-      box-shadow: none;
 
       .${globalClasses.arrowHelper} {
         box-shadow: ${t.btnBorderWidth} 0 0 0 ${t.btnDisabledBorderColor};
@@ -557,10 +552,29 @@ export const styles = memoizeStyle({
     `;
   },
 
-  wrap() {
+  wrap(t: Theme) {
     return css`
       box-sizing: border-box;
       display: inline-block;
+      padding: ${t.btnBorderWidth};
+    `;
+  },
+
+  wrapSmall(t: Theme) {
+    return css`
+      height: ${t.btnHeightSmall};
+    `;
+  },
+
+  wrapMedium(t: Theme) {
+    return css`
+      height: ${t.btnHeightMedium};
+    `;
+  },
+
+  wrapLarge(t: Theme) {
+    return css`
+      height: ${t.btnHeightLarge};
     `;
   },
 
