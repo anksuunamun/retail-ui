@@ -6,10 +6,11 @@ import { isTestEnv } from '../lib/currentEnvironment';
 import { ThemeContext } from '../lib/theming/ThemeContext';
 
 import { DEFAULT_THEME } from '../lib/theming/themes/DefaultTheme';
+import { DARK_THEME } from '../lib/theming/themes/DarkTheme';
 import { DEFAULT_THEME_8PX_OLD } from '../lib/theming/themes/DefaultTheme8pxOld';
 import { FLAT_THEME_8PX_OLD } from '../lib/theming/themes/FlatTheme8pxOld';
 
-const themes = { DEFAULT_THEME, DEFAULT_THEME_8PX_OLD, FLAT_THEME_8PX_OLD };
+const themes = { DEFAULT_THEME, DARK_THEME, DEFAULT_THEME_8PX_OLD, FLAT_THEME_8PX_OLD };
 
 setFilter((fiber) => {
   // Транслируем все пропы только для контролов
@@ -29,9 +30,18 @@ export const decorators: Meta['decorators'] = [
     const theme = themes[context.globals.theme] || DEFAULT_THEME;
     if (theme !== DEFAULT_THEME) {
       return (
-        <ThemeContext.Provider value={theme}>
-          <Story />
-        </ThemeContext.Provider>
+        <div
+          style={{
+            width: '100vw',
+            height: '100vh',
+            background: theme.bgDefault,
+            color: theme === DARK_THEME ? theme.textColorDefault : 'inherit',
+          }}
+        >
+          <ThemeContext.Provider value={theme}>
+            <Story />
+          </ThemeContext.Provider>
+        </div>
       );
     }
     return <Story />;
@@ -46,12 +56,6 @@ export const decorators: Meta['decorators'] = [
 export const parameters: Meta['parameters'] = {
   creevey: {
     captureElement: '#test-element',
-    skip: [
-      {
-        in: ['chromeFlat', 'firefoxFlat', 'ie11Flat', 'chromeFlat8px', 'firefoxFlat8px', 'ie11Flat8px'],
-        kinds: /^(?!\bButton\b|\bCheckbox\b|\bInput\b|\bRadio\b|\bTextarea\b|\bToggle\b|\bSwitcher\b|\bTokenInput\b)/,
-      },
-    ],
   },
   options: {
     storySort: (a, b) => (a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true })),
