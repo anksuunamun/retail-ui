@@ -56,7 +56,7 @@ export const Errored = () => {
   return <Component error items={['One', 'Two', 'Three']} />;
 };
 Errored.storyName = 'errored';
-Errored.parameters = { creevey: { skip: [{ in: ['chromeFlat'] }] } };
+Errored.parameters = { creevey: { skip: [{ in: ['chromeFlat', 'chromeFlat8px', 'chromeNewTheme'] }] } };
 
 export const Disabled = () => {
   return (
