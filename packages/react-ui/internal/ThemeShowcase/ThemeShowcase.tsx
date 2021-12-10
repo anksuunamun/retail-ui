@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { DEFAULT_THEME as defaultVariables } from '../../lib/theming/themes/DefaultTheme';
+import { DEFAULT_THEME_OLD as defaultVariables } from '../../lib/theming/themes/DefaultThemeOld';
+import { FLAT_THEME_OLD as flatVariables } from '../../lib/theming/themes/FlatThemeOld';
 import { ComboBox, ComboBoxItem } from '../../components/ComboBox';
 import { Gapped } from '../../components/Gapped';
 import { Link } from '../../components/Link';
@@ -180,6 +181,9 @@ class ComponentShowcase extends React.Component<ComponentShowcaseProps, {}> {
               <th className={styles.headerCell()} style={{ width: 250 }}>
                 Default Value
               </th>
+              <th className={styles.headerCell()} style={{ width: 250 }}>
+                Flat Value
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -224,7 +228,9 @@ class ComponentShowcaseRow extends React.Component<ComponentShowcaseRowProps> {
         {row.variables.map((varName) => {
           const dependencies = row.dependencies[varName] || EMPTY_ARRAY;
           const variableDefault = defaultVariables[varName] as string;
-          const hasNoVariables = isDebugMode && !variableDefault;
+          const variableFlat = flatVariables[varName] as string;
+          const hasNoVariables = isDebugMode && !variableDefault && !variableFlat;
+
           return (
             <tr key={`${el}_${varName}`} className={cx(styles.row(), { [styles.suspiciousRow()]: hasNoVariables })}>
               <td className={styles.cell()}>
@@ -236,6 +242,9 @@ class ComponentShowcaseRow extends React.Component<ComponentShowcaseRowProps> {
               </td>
               <td className={styles.cell()}>
                 <VariableValue value={variableDefault} />
+              </td>
+              <td className={styles.cell()}>
+                <VariableValue value={variableFlat} />
               </td>
             </tr>
           );
@@ -311,9 +320,12 @@ class DependencyName extends React.Component<DependencyNameProps> {
   private getValues = () => {
     const dependencyName = this.props.dependencyName;
     const dependencyDefault = defaultVariables[dependencyName] as string;
+    const dependencyFlat = flatVariables[dependencyName] as string;
     return (
       <React.Fragment>
         <span>Default value: {<VariableValue value={dependencyDefault} />}</span>
+        <br />
+        <span>Flat value: {<VariableValue value={dependencyFlat} />}</span>
       </React.Fragment>
     );
   };
@@ -363,13 +375,9 @@ const ShowUnusedVariables = (props: { diff: string[] }) => {
 };
 
 function isColor(input: string) {
-  return (
-    typeof input === 'string' &&
-    !!input &&
-    (input.startsWith('#') || input.startsWith('rgb') || input.startsWith('hsl'))
-  );
+  return !!input && (input.startsWith('#') || input.startsWith('rgb') || input.startsWith('hsl'));
 }
 
 function isGradient(input: string) {
-  return typeof input === 'string' && !!input && input.startsWith('linear-gradient');
+  return !!input && input.startsWith('linear-gradient');
 }

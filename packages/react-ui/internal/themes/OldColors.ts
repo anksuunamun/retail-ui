@@ -1,8 +1,8 @@
 import { exposeGetters } from '../../lib/theming/ThemeHelpers';
 
-import { DefaultThemeInternal } from './DefaultTheme';
+import { NewDefaultThemeInternal } from './NewDefaultTheme';
 
-export class OldColorsTheme extends (class {} as typeof DefaultThemeInternal) {
+export class OldColorsTheme extends (class {} as typeof NewDefaultThemeInternal) {
   //#region Common variables
   public static brand = '#1e79be';
   public static grayXLight = '#e5e5e5';
@@ -141,5 +141,5 @@ export class OldColorsTheme extends (class {} as typeof DefaultThemeInternal) {
 
 export const OldColorsThemeInternal = Object.setPrototypeOf(
   exposeGetters(OldColorsTheme),
-  DefaultThemeInternal,
+  NewDefaultThemeInternal,
 ) as typeof OldColorsTheme;

@@ -5,11 +5,13 @@ import { Meta } from '@storybook/react';
 import { isTestEnv } from '../lib/currentEnvironment';
 import { ThemeContext } from '../lib/theming/ThemeContext';
 
+import { FLAT_THEME_OLD } from '../lib/theming/themes/FlatThemeOld';
+import { FLAT_THEME } from '../lib/theming/themes/FlatTheme';
+import { DEFAULT_THEME_OLD } from '../lib/theming/themes/DefaultThemeOld';
 import { DEFAULT_THEME } from '../lib/theming/themes/DefaultTheme';
-import { DEFAULT_THEME_8PX_OLD } from '../lib/theming/themes/DefaultTheme8pxOld';
-import { FLAT_THEME_8PX_OLD } from '../lib/theming/themes/FlatTheme8pxOld';
+import { NEW_THEME } from '../lib/theming/themes/NewTheme';
 
-const themes = { DEFAULT_THEME, DEFAULT_THEME_8PX_OLD, FLAT_THEME_8PX_OLD };
+const themes = { DEFAULT_THEME, FLAT_THEME, DEFAULT_THEME_OLD, FLAT_THEME_OLD, NEW_THEME };
 
 setFilter((fiber) => {
   // Транслируем все пропы только для контролов
