@@ -1,3 +1,4 @@
+import { is8pxTheme } from '../../lib/theming/ThemeHelpers';
 import { css, memoizeStyle } from '../../lib/theming/Emotion';
 import { Theme } from '../../lib/theming/Theme';
 import { resetButton } from '../../lib/styles/Mixins';
@@ -37,19 +38,19 @@ export const styles = memoizeStyle({
 
   containerWithoutHeader(t: Theme) {
     return css`
-      padding-top: ${t.sidePagePaddingTop};
+      padding-top: ${is8pxTheme(t) ? t.sidePagePaddingTop : 0};
     `;
   },
 
   containerWithoutFooter(t: Theme) {
     return css`
-      padding-bottom: ${t.sidePagePaddingBottom};
+      padding-bottom: ${is8pxTheme(t) ? t.sidePagePaddingBottom : 0};
     `;
   },
 
   containerWithPanel(t: Theme) {
     return css`
-      padding-bottom: ${t.sidePagePaddingBottom};
+      padding-bottom: ${is8pxTheme(t) ? t.sidePagePaddingBottom : 0};
     `;
   },
 

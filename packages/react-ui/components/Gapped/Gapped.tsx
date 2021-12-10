@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { CommonProps, CommonWrapper } from '../../internal/CommonWrapper';
+import { CommonWrapper, CommonProps } from '../../internal/CommonWrapper';
+import { is8pxTheme } from '../../lib/theming/ThemeHelpers';
+import { Theme } from '../../lib/theming/Theme';
+import { ThemeContext } from '../../lib/theming/ThemeContext';
 
 export interface GappedProps extends CommonProps {
   /**
@@ -50,6 +53,8 @@ export class Gapped extends React.Component<GappedProps> {
     verticalAlign: PropTypes.oneOf(['top', 'middle', 'baseline', 'bottom']),
   };
 
+  private theme!: Theme;
+
   public static defaultProps = {
     wrap: false,
     vertical: false,
@@ -58,9 +63,16 @@ export class Gapped extends React.Component<GappedProps> {
 
   public render() {
     return (
-      <CommonWrapper {...this.props}>
-        {this.props.vertical ? this.renderVertical() : this.renderHorizontal()}
-      </CommonWrapper>
+      <ThemeContext.Consumer>
+        {(theme) => {
+          this.theme = theme;
+          return (
+            <CommonWrapper {...this.props}>
+              {this.props.vertical ? this.renderVertical() : this.renderHorizontal()}
+            </CommonWrapper>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 
@@ -70,7 +82,8 @@ export class Gapped extends React.Component<GappedProps> {
     if (propsGap !== undefined && propsGap !== null) {
       return propsGap;
     } else {
-      return 8;
+      const gap = is8pxTheme(this.theme) ? 8 : 10;
+      return gap;
     }
   }
 

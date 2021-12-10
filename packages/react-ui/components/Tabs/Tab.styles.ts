@@ -2,6 +2,7 @@ import { css, memoizeStyle, prefix } from '../../lib/theming/Emotion';
 import { shift } from '../../lib/styles/DimensionFunctions';
 import * as ColorFunctions from '../../lib/styles/ColorFunctions';
 import { Theme } from '../../lib/theming/Theme';
+import { is8pxTheme } from '../../lib/theming/ThemeHelpers';
 
 export const globalClasses = prefix('tab')({
   focus: 'focus',
@@ -9,8 +10,8 @@ export const globalClasses = prefix('tab')({
 
 export const styles = memoizeStyle({
   root(t: Theme) {
-    const paddingTop = t.tabPaddingY;
-    const paddingBottom = `calc(${t.tabPaddingY} - ${t.tabBorderWidth})`;
+    const paddingTop = is8pxTheme(t) ? t.tabPaddingY : shift(t.tabPaddingY, '-1px');
+    const paddingBottom = is8pxTheme(t) ? `calc(${t.tabPaddingY} - ${t.tabBorderWidth})` : shift(t.tabPaddingY, '1px');
     return css`
       border-bottom: ${t.tabBorderWidth} solid transparent;
       box-sizing: border-box;
