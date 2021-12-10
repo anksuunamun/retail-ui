@@ -28,23 +28,23 @@ const config = {
   }),
   diffOptions: { threshold: 0, includeAA: false },
   browsers: {
-    chrome: {
+    chromeNewTheme: {
       browserName: 'chrome',
       viewport: { width: 1024, height: 720 },
       platformName: 'linux',
       _storybookGlobals: {
         theme: 'NEW_THEME',
       },
-      name: 'infrafront/chrome',
+      name: 'infrafront/chromeNewTheme',
       ...capabilities,
     },
-    firefox: {
+    firefoxNewTheme: {
       browserName: 'firefox',
       viewport: { width: 1024, height: 720 },
       _storybookGlobals: {
         theme: 'NEW_THEME',
       },
-      name: 'infrafront/firefox',
+      name: 'infrafront/firefoxNewTheme',
       ...capabilities,
     },
     // NOTE Enable after switch new separate pool for IE to allow test hover
@@ -57,13 +57,13 @@ const config = {
     //   'ie.ensureCleanSession': true,
     // },
     // },
-    ie11: {
+    ie11NewTheme: {
       browserName: 'internet explorer',
       viewport: { width: 1024, height: 720 },
       _storybookGlobals: {
         theme: 'NEW_THEME',
       },
-      name: 'infrafront/ie11',
+      name: 'infrafront/ie11NewTheme',
       ...capabilities,
     },
   },
