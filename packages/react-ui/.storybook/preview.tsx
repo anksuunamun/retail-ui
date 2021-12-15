@@ -32,8 +32,8 @@ export const decorators: Meta['decorators'] = [
       return (
         <div
           style={{
-            width: '100vw',
-            height: '100vh',
+            width: '100%',
+            height: '100%',
             background: theme.bgDefault,
             color: theme === DARK_THEME ? theme.textColorDefault : 'inherit',
           }}
@@ -59,6 +59,19 @@ export const parameters: Meta['parameters'] = {
   },
   options: {
     storySort: (a, b) => (a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true })),
+  },
+  backgrounds: {
+    default: 'default',
+    values: [
+      {
+        name: 'default',
+        value: '#fff',
+      },
+      {
+        name: 'dark',
+        value: '#1f1f1f',
+      },
+    ],
   },
 };
 

@@ -31,6 +31,7 @@ export class DefaultTheme {
   public static yellow = '#ffa236';
   public static yellowDark = '#ea7324';
   public static bgDefault = '#fff';
+  public static bgDropdownDefault = '#fff';
   public static bgDisabled = '#f6f6f6';
   public static errorMain = '#dd473b';
   public static errorSecondary = '#ffd6d6';
@@ -62,7 +63,7 @@ export class DefaultTheme {
   public static fontSizeMedium = '16px';
   public static fontSizeLarge = '18px';
   public static specificityLevel = '0';
-  private static fixedPanelShadow = '0 0 16px 1px rgba(0, 0, 0, 0.3)';
+  public static fixedPanelShadow = '0 0 16px 1px rgba(0, 0, 0, 0.3)';
   public static get bgActive() {
     return this.blueLight;
   }
@@ -624,6 +625,9 @@ export class DefaultTheme {
   //#endregion
   //#region Modal
   public static modalBackBg = '#222';
+  public static get modalBg() {
+    return this.bgDefault;
+  }
   public static modalBackOpacity = '0.6';
   public static modalCloseButtonColor = 'rgba(0, 0, 0, 0.32)';
   public static modalCloseButtonDisabledColor = '#8b8b8b';
@@ -657,6 +661,9 @@ export class DefaultTheme {
   public static get modalFixedHeaderPaddingBottom() {
     return `${Math.round(parseInt(this.modalHeaderPaddingBottom) / 2)}px`;
   }
+  public static get modalBodyTextColor() {
+    return this.textColorDefault;
+  }
   public static modalBodyPaddingBottom = '24px';
   public static modalFooterPaddingTop = '0px';
   public static modalFooterPaddingBottom = '32px';
@@ -681,6 +688,12 @@ export class DefaultTheme {
     return this.bgDefault;
   }
   public static get sidePageHeaderTextColor() {
+    return this.textColorDefault;
+  }
+  public static get sidePageBodyTextColor() {
+    return this.textColorDefault;
+  }
+  public static get sidePageFooterTextColor() {
     return this.textColorDefault;
   }
   public static sidePageHeaderFontSize = '24px';
@@ -709,7 +722,7 @@ export class DefaultTheme {
     return this.textColorDefault;
   }
   public static dateInputMaskColor = '#b8b8b8';
-  public static dateInputComponentSelectedBgColor = '#cae0f4';
+  public static dateInputComponentSelectedBgColor = '#cdedff';
   //#endregion
   //#region Calendar
   public static calendarCellBg = 'white';
@@ -959,9 +972,7 @@ export class DefaultTheme {
   public static get toggleBgDisabled() {
     return this.bgDisabled;
   }
-  public static get toggleBgDisabledChecked() {
-    return this.bgDisabled;
-  }
+  public static toggleBgDisabledChecked = '#d6d6d6';
   public static toggleBgHover = '#f3f3f2';
   public static toggleBgChecked = '#1874cf';
   public static get toggleBorderWidth() {
@@ -1540,6 +1551,12 @@ export class DefaultTheme {
   public static scrollContainerScrollBarHoverSize = '10px';
   public static scrollContainerScrollBarColor = '#b7b7b7';
   public static scrollContainerScrollBarInvertColor = 'rgba(255, 255, 255, 0.5)';
+  //#endregion
+  //#region PasswordInput
+  public static passwordInputVisibilityIconColor = 'rgba(0, 0, 0, 0.6)';
+  public static get passwordInputVisibilityIconHoverColor() {
+    return this.textColorDefault;
+  }
   //#endregion
 }
 

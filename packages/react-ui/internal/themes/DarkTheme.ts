@@ -18,8 +18,10 @@ export class DarkTheme extends (class {} as typeof DefaultThemeInternal) {
   public static textColorDefault = 'rgba(255, 255, 255, 0.865)';
   public static textColorDisabled = 'rgba(255, 255, 255, 0.32)';
   public static textColorDisabledContrast = 'rgba(255, 255, 255, 0.48)';
-  public static bgDisabled = 'rgba(255, 255, 255, 0.16)';
+  public static textColorInvert = 'rgba(255, 255, 255, 0.865)';
+  public static bgDisabled = '#434343';
   public static bgDefault = '#1f1f1f';
+  public static outlineColorFocus = '#1f1f1f';
   //#endregion
   //#region Link
   public static linkColor = '#51adff';
@@ -31,13 +33,13 @@ export class DarkTheme extends (class {} as typeof DefaultThemeInternal) {
   public static linkDangerColor = '#ff887b';
   public static linkDangerHoverColor = '#ff5a49';
   public static linkDangerActiveColor = '#ee5042';
+  public static fixedPanelShadow = '0px 0px 16px 1px rgba(0, 0, 0, 0.4)';
   //#endregion
   //#region Button
-  public static get btnDefaultBg() {
-    return this.bgDefault;
-  }
+  public static btnInsetColor = '#1f1f1f';
+  public static btnDefaultBg = '#282828';
   public static btnDefaultHoverBg = 'none';
-  public static btnDefaultActiveBg = 'rgba(0, 0, 0, 0.16)';
+  public static btnDefaultActiveBg = '#1a1a1a';
   public static get btnDefaultHoverBorderColor() {
     return this.borderColorGrayLight;
   }
@@ -77,18 +79,31 @@ export class DarkTheme extends (class {} as typeof DefaultThemeInternal) {
   //#endregion
   //#region Modal
   public static modalBackBg = 'rgba(255, 255, 255, 0.865)';
+  public static get modalBg() {
+    return this.bgDropdownDefault;
+  }
   public static modalCloseButtonColor = 'rgba(255, 255, 255, 0.32)';
   public static modalCloseButtonHoverColor = 'rgba(255, 255, 255, 0.865)';
-  public static modalFooterBg = 'rgba(255, 255, 255, 0.08)';
+  public static modalFooterBg = '#434343';
+  public static modalFixedHeaderBg = '#333';
   //#endregion
   //#region SidePage
-  public static sidePageFooterPanelBg = 'rgba(255, 255, 255, 0.08)';
+  public static sidePageFooterPanelBg = ' #434343';
   public static sidePageBackingBg = 'rgba(255, 255, 255, 0.865)';
+  public static sidePageCloseButtonColor = 'rgba(255, 255, 255, 0.32)';
+  public static sidePageCloseButtonHoverColor = 'rgba(255, 255, 255, 0.865)';
+  public static get sidePageBgDefault() {
+    return this.bgDropdownDefault;
+  }
   //#endregion
   //#region Calendar
+  public static calendarCellBg = '#333333';
+  public static calendarMonthHeaderStickedBgColor = '#333333';
   public static calendarCellWeekendColor = '#ff887b';
   public static calendarCellTodayBorder = '1px solid rgba(255, 255, 255, 0.48)';
   public static calendarCellSelectedBgColor = 'rgba(255, 255, 255, 0.16)';
+  public static calendarMonthTitleBorderBottomColor = 'rgba(255, 255, 255, 0.08)';
+
   //#endregion
   //#region Paging
   public static pagingPageLinkHoverBg = 'rgba(255, 255, 255, 0.8)';
@@ -106,6 +121,41 @@ export class DarkTheme extends (class {} as typeof DefaultThemeInternal) {
   //#endregion
   //#region Toggle
   public static toggleBorderColor = 'rgba(255, 255, 255, 0.32)';
+  public static toggleDisabledHandleBg = '#545454'; //TODO
+  public static toggleBaseBg = 'rgba(255, 255, 255, 0.04)';
+  public static get toggleBgDisabled() {
+    return this.bgDisabled;
+  }
+  public static toggleBgDisabledChecked = 'rgba(255, 255, 255, 0.48)';
+  //#endregion
+  //#region Input
+  public static inputBg = 'rgba(255, 255, 255, 0.04)';
+  //#endregion
+  //#region DatePicker
+  public static pickerBg = '#333333';
+  public static dateSelectMenuBg = '#333333';
+  public static dateSelectMenuItemBgSelected = 'rgba(255, 255, 255, 0.08)';
+  public static pickerTodayWrapperBgColor = '#333333';
+  public static pickerTodayWrapperBorderTop = '1px solid rgba(255, 255, 255, 0.08)';
+  public static menuBgDefault = '#333333';
+  public static dateInputComponentSelectedBgColor = '#1c7edf';
+  public static popupBackground = '#333333';
+  public static bgDropdownDefault = '#333333';
+  public static hintBgColor = 'rgba(67, 67, 67, 0.92)';
+  public static get inputBorderTopColor() {
+    return this.inputBorderColor;
+  }
+  public static loaderBg = 'rgba(51, 51, 51, 0.8)';
+  public static dropdownMenuSelectedBg = 'rgba(255, 255, 255, 0.08)'; //deprecated
+
+  //#endregion
+  //#region TextArea
+  public static textareaBg = '#1f1f1f';
+  //#endregion
+  //#region PasswordInput
+  public static get passwordInputVisibilityIconColor() {
+    return this.gray;
+  }
   //#endregion
 }
 

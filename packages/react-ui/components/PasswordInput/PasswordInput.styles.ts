@@ -13,15 +13,14 @@ export const styles = memoizeStyle({
       }
     `;
   },
-  toggleVisibility() {
+  toggleVisibility(t: Theme) {
     return css`
-      color: #000;
+      color: ${t.passwordInputVisibilityIconColor};
       cursor: pointer;
-      opacity: 0.6;
       user-select: none;
 
       &:hover {
-        opacity: 1;
+        color: ${t.passwordInputVisibilityIconHoverColor};
       }
     `;
   },
