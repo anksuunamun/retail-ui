@@ -4,7 +4,7 @@ import { DefaultThemeInternal } from './DefaultTheme';
 
 export class DarkTheme extends (class {} as typeof DefaultThemeInternal) {
   //#region Common variables
-  public static grayXLight = 'rgba(255, 255, 255, 0.08)';
+  public static grayXLight = '#313131';
   public static gray = 'rgba(255, 255, 255, 0.48)';
   public static green = '#5f9c20';
   public static greenDark = '#538a1b';
@@ -21,6 +21,7 @@ export class DarkTheme extends (class {} as typeof DefaultThemeInternal) {
   public static textColorInvert = 'rgba(255, 255, 255, 0.865)';
   public static bgDisabled = '#434343';
   public static bgDefault = '#1f1f1f';
+  public static bgDropdownDefault = '#333333';
   public static outlineColorFocus = '#1f1f1f';
   //#endregion
   //#region Link
@@ -79,26 +80,17 @@ export class DarkTheme extends (class {} as typeof DefaultThemeInternal) {
   //#endregion
   //#region Modal
   public static modalBackBg = 'rgba(255, 255, 255, 0.865)';
-  public static get modalBg() {
-    return this.bgDropdownDefault;
-  }
   public static modalCloseButtonColor = 'rgba(255, 255, 255, 0.32)';
   public static modalCloseButtonHoverColor = 'rgba(255, 255, 255, 0.865)';
   public static modalFooterBg = '#434343';
-  public static modalFixedHeaderBg = '#333';
   //#endregion
   //#region SidePage
   public static sidePageFooterPanelBg = ' #434343';
   public static sidePageBackingBg = 'rgba(255, 255, 255, 0.865)';
   public static sidePageCloseButtonColor = 'rgba(255, 255, 255, 0.32)';
   public static sidePageCloseButtonHoverColor = 'rgba(255, 255, 255, 0.865)';
-  public static get sidePageBgDefault() {
-    return this.bgDropdownDefault;
-  }
   //#endregion
   //#region Calendar
-  public static calendarCellBg = '#333333';
-  public static calendarMonthHeaderStickedBgColor = '#333333';
   public static calendarCellWeekendColor = '#ff887b';
   public static calendarCellTodayBorder = '1px solid rgba(255, 255, 255, 0.48)';
   public static calendarCellSelectedBgColor = 'rgba(255, 255, 255, 0.16)';
@@ -121,7 +113,7 @@ export class DarkTheme extends (class {} as typeof DefaultThemeInternal) {
   //#endregion
   //#region Toggle
   public static toggleBorderColor = 'rgba(255, 255, 255, 0.32)';
-  public static toggleDisabledHandleBg = '#545454'; //TODO
+  public static toggleDisabledHandleBg = '#525252';
   public static toggleBaseBg = 'rgba(255, 255, 255, 0.04)';
   public static get toggleBgDisabled() {
     return this.bgDisabled;
@@ -130,24 +122,25 @@ export class DarkTheme extends (class {} as typeof DefaultThemeInternal) {
   //#endregion
   //#region Input
   public static inputBg = 'rgba(255, 255, 255, 0.04)';
-  //#endregion
-  //#region DatePicker
-  public static pickerBg = '#333333';
-  public static dateSelectMenuBg = '#333333';
-  public static dateSelectMenuItemBgSelected = 'rgba(255, 255, 255, 0.08)';
-  public static pickerTodayWrapperBgColor = '#333333';
-  public static pickerTodayWrapperBorderTop = '1px solid rgba(255, 255, 255, 0.08)';
-  public static menuBgDefault = '#333333';
-  public static dateInputComponentSelectedBgColor = '#1c7edf';
-  public static popupBackground = '#333333';
-  public static bgDropdownDefault = '#333333';
-  public static hintBgColor = 'rgba(67, 67, 67, 0.92)';
   public static get inputBorderTopColor() {
     return this.inputBorderColor;
   }
+  //#endregion
+  //#region DatePicker
+  public static dateSelectMenuItemBgSelected = 'rgba(255, 255, 255, 0.08)';
+  public static pickerTodayWrapperBorderTop = '1px solid rgba(255, 255, 255, 0.08)';
+  //#endregion
+  //#region DateInput
+  public static dateInputComponentSelectedBgColor = '#1c7edf';
+  //#endregion
+  //#region Hint
+  public static hintBgColor = 'rgba(67, 67, 67, 0.92)';
+  //#endregion
+  //#region Loader
   public static loaderBg = 'rgba(51, 51, 51, 0.8)';
+  //#endregion
+  //#region Dropdown
   public static dropdownMenuSelectedBg = 'rgba(255, 255, 255, 0.08)'; //deprecated
-
   //#endregion
   //#region TextArea
   public static textareaBg = '#1f1f1f';

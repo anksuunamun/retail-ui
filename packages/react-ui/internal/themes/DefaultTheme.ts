@@ -31,7 +31,9 @@ export class DefaultTheme {
   public static yellow = '#ffa236';
   public static yellowDark = '#ea7324';
   public static bgDefault = '#fff';
-  public static bgDropdownDefault = '#fff';
+  public static get bgDropdownDefault() {
+    return this.bgDefault;
+  }
   public static bgDisabled = '#f6f6f6';
   public static errorMain = '#dd473b';
   public static errorSecondary = '#ffd6d6';
@@ -626,7 +628,7 @@ export class DefaultTheme {
   //#region Modal
   public static modalBackBg = '#222';
   public static get modalBg() {
-    return this.bgDefault;
+    return this.bgDropdownDefault;
   }
   public static modalBackOpacity = '0.6';
   public static modalCloseButtonColor = 'rgba(0, 0, 0, 0.32)';
@@ -639,7 +641,9 @@ export class DefaultTheme {
   public static modalCloseIconSize = '12px';
   public static modalCloseLegacyGap = '0px';
   public static modalCloseWrapperLegacyGap = '0px';
-  public static modalFixedHeaderBg = '#fff';
+  public static get modalFixedHeaderBg() {
+    return this.bgDropdownDefault;
+  }
   public static get modalFixedHeaderShadow() {
     return this.fixedPanelShadow;
   }
@@ -685,7 +689,7 @@ export class DefaultTheme {
   public static sidePageFooterPaddingTop = '24px';
   public static sidePageFooterPaddingBottom = '32px';
   public static get sidePageBgDefault() {
-    return this.bgDefault;
+    return this.bgDropdownDefault;
   }
   public static get sidePageHeaderTextColor() {
     return this.textColorDefault;
@@ -725,7 +729,9 @@ export class DefaultTheme {
   public static dateInputComponentSelectedBgColor = '#cdedff';
   //#endregion
   //#region Calendar
-  public static calendarCellBg = 'white';
+  public static get calendarCellBg() {
+    return this.bgDropdownDefault;
+  }
   public static calendarCellHoverColor = 'white';
   public static calendarCellActiveHoverColor = 'white';
   public static calendarCellWeekendColor = '#cb3d35';
@@ -733,7 +739,9 @@ export class DefaultTheme {
   public static calendarCellSelectedBgColor = '#ebebeb';
   public static calendarCellSelectedFontColor = 'inherit';
   public static calendarCellSize = '32px';
-  public static calendarMonthHeaderStickedBgColor = 'white';
+  public static get calendarMonthHeaderStickedBgColor() {
+    return this.bgDropdownDefault;
+  }
   public static calendarMonthTitleBorderBottomColor = '#dfdede';
   public static get calendarCellHoverBgColor() {
     return this.bgActive;
@@ -771,9 +779,13 @@ export class DefaultTheme {
   public static get datePickerOpenBtnColor() {
     return this.textColorDefault;
   }
-  public static pickerBg = '#fff';
+  public static get pickerBg() {
+    return this.bgDropdownDefault;
+  }
   public static pickerShadow = '0 4px 12px 0 rgba(0, 0, 0, 0.16)';
-  public static pickerTodayWrapperBgColor = 'white';
+  public static get pickerTodayWrapperBgColor() {
+    return this.bgDropdownDefault;
+  }
   public static pickerTodayWrapperBorderTop = '1px solid #dfdede';
   public static pickerTodayWrapperHoverBgColor = '#f5f5f5';
   public static pickerTodayWrapperFontSize = '14px';
@@ -783,7 +795,7 @@ export class DefaultTheme {
   //#endregion
   //#region DateSelect
   public static get dateSelectMenuBg() {
-    return this.bgDefault;
+    return this.bgDropdownDefault;
   }
   public static get dateSelectMenuItemBgActive() {
     return this.bgActive;
@@ -887,7 +899,7 @@ export class DefaultTheme {
   //#endregion
   //#region Menu
   public static get menuBgDefault() {
-    return this.bgDefault;
+    return this.bgDropdownDefault;
   }
   public static menuBorder = 'none';
   public static menuShadow = '0 4px 12px rgba(0, 0, 0, 0.16)';
@@ -972,7 +984,7 @@ export class DefaultTheme {
   public static get toggleBgDisabled() {
     return this.bgDisabled;
   }
-  public static toggleBgDisabledChecked = '#d6d6d6';
+  public static toggleBgDisabledChecked = '#dadada';
   public static toggleBgHover = '#f3f3f2';
   public static toggleBgChecked = '#1874cf';
   public static get toggleBorderWidth() {
@@ -1013,7 +1025,7 @@ export class DefaultTheme {
     return this.textColorDefault;
   }
   public static get popupBackground() {
-    return this.bgDefault;
+    return this.bgDropdownDefault;
   }
   public static popupPinOffset = '0'; // deprecated
   public static popupPinOffsetX = '16px';
