@@ -13,7 +13,8 @@ module.exports = {
       },
     },
   ],
-  stories: ['../components/**/*.stories.tsx', '../internal/**/*.stories.tsx'],
+  // stories: ['../components/**/*.stories.tsx', '../internal/**/*.stories.tsx'],
+  stories: ['../components/Tooltip/**/*.stories.tsx'],
   typescript: {
     reactDocgen: 'none',
   },
