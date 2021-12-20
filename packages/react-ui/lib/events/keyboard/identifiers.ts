@@ -10,6 +10,7 @@ type ISSome = (...is: IS[]) => IS;
 
 // IE 9+ supports char attribute
 // https://developer.mozilla.org/ru/docs/Web/API/KeyboardEvent
+// @ts-ignore:next-line
 const getChar = (e: E) => (e instanceof KeyboardEvent ? e.char : e.nativeEvent.char);
 
 export const isShortcutCopy: IS = (e) =>
